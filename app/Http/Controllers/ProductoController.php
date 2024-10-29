@@ -19,8 +19,11 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        //
-    }
+        //$marcas = Marca::join('caracteristicas as c', 'marcas.caracteristica_id', '=', 'c.id')->where('c.estado',1)->get();
+        //return view('producto.create', compact('marcas'));
+        return view('producto.create'); //<--------------------------------borrar esta
+    }//
+    
 
     /**
      * Store a newly created resource in storage.
