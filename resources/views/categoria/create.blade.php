@@ -3,7 +3,11 @@
 @section('title','Crear categoria')
 
 @push('css')
-
+<style>
+    #descripcion{
+        resize: none;
+    }
+</style>
 @end push
 
 @section('content')

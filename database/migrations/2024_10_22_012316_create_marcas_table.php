@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ordenes', function (Blueprint $table) {
+        Schema::create('marcas', function (Blueprint $table) {
             $table->id();
-
-            $table->date('hora_pedido');
-            $table->date('hora_entrega');
-            
+            $table->foreignId('caracteristica_id')->unique()->constrained('caracteristicas')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ordenes');
+        Schema::dropIfExists('marcas');
     }
 };

@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('personas', function (Blueprint $table) {
+        Schema::create('compras', function (Blueprint $table) {
             $table->id();
 
-            $table->string('razon_social',80);
-            $table->string('direccion',80);
-            $table->string('tipo_persona',20);
+            $table->dateTime('fecha_hora');
+            $table->decimal('impuesto',8,2)->unsigned();
+            $table->string('numero_comprobante',255);
+            $table->foreignId('comprobante_id')->nullable()->constrained('comprobantes')->onDelete('set null');
+            $table->foreignId('proveedore_id')->nullable()->constrained('proveedores')->onDelete('set null');
             $table->tinyInteger('estado')->default(1);
 
             $table->timestamps();
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('personas');
+        Schema::dropIfExists('compras');
     }
 };

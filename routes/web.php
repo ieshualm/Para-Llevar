@@ -1,5 +1,5 @@
 <?php
-
+//poner notas
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -9,6 +9,8 @@ Route::get('/', function () {
 Route::view('/panel', 'panel.index')->name('panel');
 
 Route::resource('categorias', App\Http\Controllers\categoriaController::class);
+
+Route::resource('productos', App\Http\Controllers\ProductoController::class);
 
 Route::view('/create','categoria.create');
 
