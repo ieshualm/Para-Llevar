@@ -12,6 +12,10 @@ Route::resource('categorias', App\Http\Controllers\categoriaController::class);
 
 Route::resource('productos', App\Http\Controllers\ProductoController::class);
 
+Route::resource('marcas', App\Http\Controllers\marcaController::class);
+
+Route::resource('presentaciones', App\Http\Controllers\presentacioneController::class);
+
 Route::view('/create','categoria.create');
 
 Route::get('/login', function () {

@@ -55,13 +55,17 @@
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-tags"></i></div>
                                 Categorias
                             </a>
-                            <a class="nav-link" href="#">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Tablas
-                            </a>
                             <a class="nav-link" href="{{ route('productos.index')}}">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-hotdog"></i></div>
                                 Productos
+                            </a>
+                            <a class="nav-link" href="{{ route('marcas.index') }}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Marcas
+                            </a>
+                            <a class="nav-link" href="{{ route('presentaciones.index') }}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Presentaciones
                             </a>
                         </div>
                     </div>

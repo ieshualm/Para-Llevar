@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Presentacione;
+use App\Models\Marca;
+use App\Models\Categoria;
 
 class ProductoController extends Controller
 {
@@ -19,9 +22,11 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        //$marcas = Marca::join('caracteristicas as c', 'marcas.caracteristica_id', '=', 'c.id')->where('c.estado',1)->get();
-        //return view('producto.create', compact('marcas'));
-        return view('producto.create'); //<--------------------------------borrar esta
+        $marcas = Marca::join('caracteristicas as c', 'marcas.caracteristica_id','=','c.id')->where('c.estado',1)->get();
+        $presentaciones = Presentacione::join('caracteristicas as c', 'presentaciones.caracteristica_id','=','c.id')->where('c.estado',1)->get();
+        $categorias = Categoria::join('caracteristicas as c','categorias.caracteristica_id','=','c.id')->where('c.estado',1)->get();
+
+        return view('producto.create', compact('marcas','presentaciones','categorias'));
     }//
     
 
