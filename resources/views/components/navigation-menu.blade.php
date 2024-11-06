@@ -4,13 +4,13 @@
             <div class="nav">
 
                 <div class="sb-sidenav-menu-heading">Inicio</div>
-                <a class="nav-link" href="{{ route('panel') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    Panel
-                </a>
                 <a class="nav-link" href="{{ route('menus.index') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Menu
+                </a>
+                <a class="nav-link" href="{{ route('panel') }}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    Panel
                 </a>
 
                 <!---div class="sb-sidenav-menu-heading">Interface</div>
@@ -57,7 +57,7 @@
                     </nav>
                 </div--->
 
-                <div class="sb-sidenav-menu-heading">Modulos</div>
+                <div class="sb-sidenav-menu-heading">Inventario</div>
 
                 <!----Compras---->
                 @can('ver-compra')
@@ -90,9 +90,9 @@
                         @can('ver-venta')
                         <a class="nav-link" href="{{ route('ventas.index') }}">Ver</a>
                         @endcan
-                        @can('crear-compra')
+                        <!--@can('crear-compra')
                         <a class="nav-link" href="{{ route('ventas.create') }}">Crear</a>
-                        @endcan
+                        @endcan-->
                     </nav>
                 </div>
                 @endcan
@@ -121,10 +121,12 @@
                 @can('ver-producto')
                 <a class="nav-link" href="{{ route('productos.index') }}">
                     <div class="sb-nav-link-icon"><i class="fa-brands fa-shopify"></i></div>
-                    Productos
+                    Platillos
                 </a>
                 @endcan
 
+                <div class="sb-sidenav-menu-heading">Personas</div>
+                
                 @can('ver-cliente')
                 <a class="nav-link" href="{{ route('clientes.index') }}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-users"></i></div>

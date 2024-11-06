@@ -12,11 +12,11 @@
 
 
 <div class="container-fluid">
-    <h1 class="mt-4 mb-4 text-center">Configurar perfil</h1>
+    <h1 class="mt-4 mb-4 text-center">Información perfil</h1>
 
     <div class="card">
         <div class="card-header">
-            <p class="lead">Configure y personalize su perfil</p>
+            <p class="lead">Revise la configuración de su perfil</p>
         </div>
         <div class="card-body">
             <div class="">
@@ -59,7 +59,7 @@
                     </div>
                 </div>
 
-                <!----Password--->
+                <!----Password
                 <div class="row mb-4">
                     <div class="col-sm-4">
                         <div class="input-group">
@@ -71,10 +71,11 @@
                         <input disabled type="password" name="password" id="password" class="form-control">
                     </div>
                 </div>
+                -->
 
-                <div class="col text-center">
+                <!--<div class="col text-center">
                     <input disabled class="btn btn-success" type="submit" value="Guardar cambios">
-                </div>
+                </div>-->
 
             </form>
         </div>

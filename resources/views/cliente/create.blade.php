@@ -32,8 +32,8 @@
                         <label for="tipo_persona" class="form-label">Tipo de cliente:</label>
                         <select class="form-select" name="tipo_persona" id="tipo_persona">
                             <option value="" selected disabled>Seleccione una opción</option>
-                            <option value="natural" {{ old('tipo_persona') == 'natural' ? 'selected' : '' }}>Persona natural</option>
-                            <option value="juridica" {{ old('tipo_persona') == 'juridica' ? 'selected' : '' }}>Persona jurídica</option>
+                            <option value="natural" {{ old('tipo_persona') == 'natural' ? 'selected' : '' }}>Persona física</option>
+                            <option value="juridica" {{ old('tipo_persona') == 'juridica' ? 'selected' : '' }}>Persona moral</option>
                         </select>
                         @error('tipo_persona')
                         <small class="text-danger">{{'*'.$message}}</small>

@@ -15,10 +15,10 @@
 @include('layouts.partials.alert')
 
 <div class="container-fluid px-4">
-    <h1 class="mt-4 text-center">Productos</h1>
+    <h1 class="mt-4 text-center">Platillos</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="{{ route('panel') }}">Inicio</a></li>
-        <li class="breadcrumb-item active">Productos</li>
+        <li class="breadcrumb-item active">Platillos</li>
     </ol>
 
     @can('crear-producto')
@@ -32,7 +32,7 @@
     <div class="card">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            Tabla productos
+            Tabla platillos
         </div>
         <div class="card-body">
             <table id="datatablesSimple" class="table table-striped fs-6">
