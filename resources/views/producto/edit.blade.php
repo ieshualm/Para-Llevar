@@ -14,11 +14,11 @@
 
 @section('content')
 <div class="container-fluid px-4">
-    <h1 class="mt-4 text-center">Editar Producto</h1>
+    <h1 class="mt-4 text-center text-purple">Editar Producto</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="{{ route('panel') }}">Inicio</a></li>
         <li class="breadcrumb-item"><a href="{{ route('productos.index')}}">Productos</a></li>
-        <li class="breadcrumb-item active">Editar producto</li>
+        <li class="breadcrumb-item active text-purple">Editar producto</li>
     </ol>
 
     <div class="card text-bg-light">

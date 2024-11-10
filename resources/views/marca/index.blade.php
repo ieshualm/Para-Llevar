@@ -15,10 +15,10 @@
 @include('layouts.partials.alert')
 
 <div class="container-fluid px-4">
-    <h1 class="mt-4 text-center">Marcas</h1>
+    <h1 class="mt-4 text-center text-purple">Marcas</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="{{ route('panel') }}">Inicio</a></li>
-        <li class="breadcrumb-item active">Marcas</li>
+        <li class="breadcrumb-item active text-purple">Marcas</li>
     </ol>
 
     @can('crear-marca')
@@ -55,7 +55,7 @@
                         </td>
                         <td>
                             @if ($item->caracteristica->estado == 1)
-                            <span class="badge rounded-pill text-bg-success">activo</span>
+                            <span class="badge rounded-pill text-bg-purple">activo</span>
                             @else
                             <span class="badge rounded-pill text-bg-danger">eliminado</span>
                             @endif

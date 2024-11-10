@@ -12,11 +12,11 @@
 
 @section('content')
 <div class="container-fluid px-4">
-    <h1 class="mt-4 text-center">Crear Categoría</h1>
+    <h1 class="mt-4 text-center text-purple">Crear Categoría</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="{{ route('panel') }}">Inicio</a></li>
         <li class="breadcrumb-item"><a href="{{ route('categorias.index')}}">Categorías</a></li>
-        <li class="breadcrumb-item active">Crear categoría</li>
+        <li class="breadcrumb-item active text-purple">Crear categoría</li>
     </ol>
 
     <div class="card text-bg-light">

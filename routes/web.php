@@ -57,3 +57,9 @@ Route::get('/404', function () {
 Route::get('/500', function () {
     return view('pages.500');
 });
+Route::get('/Privacidad', function (){
+    return view('pages.Privacidad');
+});
+Route::get('/Terminos', function (){
+    return view('pages.Terminos');
+});

@@ -13,10 +13,10 @@
 @include('layouts.partials.alert')
 
 <div class="container-fluid px-4">
-    <h1 class="mt-4 text-center">Roles</h1>
+    <h1 class="mt-4 text-center text-purple">Roles</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="{{ route('panel') }}">Inicio</a></li>
-        <li class="breadcrumb-item active">Roles</li>
+        <li class="breadcrumb-item active text-purple">Roles</li>
     </ol>
 
     @can('crear-role')
@@ -51,7 +51,7 @@
 
                                 @can('editar-role')
                                 <form action="{{route('roles.edit',['role'=>$item])}}" method="get">
-                                    <button type="submit" class="btn btn-warning">Editar</button>
+                                    <button type="submit" class="btn bg-secondary-orange text-sauv">Editar</button>
                                 </form>
                                 @endcan
 

@@ -12,7 +12,7 @@
 
 
 <div class="container-fluid">
-    <h1 class="mt-4 mb-4 text-center">Información perfil</h1>
+    <h1 class="mt-4 mb-4 text-center text-purple">Información perfil</h1>
 
     <div class="card">
         <div class="card-header">

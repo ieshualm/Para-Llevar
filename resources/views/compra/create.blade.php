@@ -10,11 +10,11 @@
 
 @section('content')
 <div class="container-fluid px-4">
-    <h1 class="mt-4 text-center">Crear Compra</h1>
+    <h1 class="mt-4 text-center text-purple">Crear Entrada</h1>
     <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="{{ route('panel') }}">Inicio</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('compras.index')}}">Compras</a></li>
-        <li class="breadcrumb-item active">Crear Compra</li>
+        <li class="breadcrumb-item text-purple"><a href="{{ route('panel') }}">Inicio</a></li>
+        <li class="breadcrumb-item text-purple"><a href="{{ route('compras.index')}}">Inventario</a></li>
+        <li class="breadcrumb-item active text-purple">Crear Entrada</li>
     </ol>
 </div>
 
@@ -25,10 +25,10 @@
         <div class="row gy-4">
             <!------Compra producto---->
             <div class="col-xl-8">
-                <div class="text-white bg-primary p-1 text-center">
-                    Detalles de la compra
+                <div class="text-white bg-primary-menu-purple p-1 text-center">
+                    Detalles de la entrada
                 </div>
-                <div class="p-3 border border-3 border-primary">
+                <div class="p-3 border border-3 border-purple">
                     <div class="row">
                         <!-----Producto---->
                         <div class="col-12 mb-4">
@@ -47,7 +47,7 @@
 
                         <!-----Precio de compra---->
                         <div class="col-sm-4 mb-2">
-                            <label for="precio_compra" class="form-label">Precio de compra:</label>
+                            <label for="precio_compra" class="form-label">Costo unitario:</label>
                             <input type="number" name="precio_compra" id="precio_compra" class="form-control" step="0.1">
                         </div>
 
@@ -66,12 +66,12 @@
                         <div class="col-12">
                             <div class="table-responsive">
                                 <table id="tabla_detalle" class="table table-hover">
-                                    <thead class="bg-primary">
+                                    <thead class="bg-primary-menu-purple">
                                         <tr>
                                             <th class="text-white">#</th>
                                             <th class="text-white">Producto</th>
                                             <th class="text-white">Cantidad</th>
-                                            <th class="text-white">Precio compra</th>
+                                            <th class="text-white">Costo unitario</th>
                                             <th class="text-white">Precio venta</th>
                                             <th class="text-white">Subtotal</th>
                                             <th></th>
@@ -96,7 +96,7 @@
                                         </tr>
                                         <tr>
                                             <th></th>
-                                            <th colspan="4">IGV %</th>
+                                            <th colspan="4">IVA %</th>
                                             <th colspan="2"><span id="igv">0</span></th>
                                         </tr>
                                         <tr>
@@ -122,10 +122,10 @@
 
             <!-----Compra---->
             <div class="col-xl-4">
-                <div class="text-white bg-success p-1 text-center">
+                <div class="text-white bg-primary-menu-purple p-1 text-center">
                     Datos generales
                 </div>
-                <div class="p-3 border border-3 border-success">
+                <div class="p-3 border border-3 border-purple">
                     <div class="row">
                         <!--Proveedor-->
                         <div class="col-12 mb-2">
@@ -164,8 +164,8 @@
 
                         <!--Impuesto---->
                         <div class="col-sm-6 mb-2">
-                            <label for="impuesto" class="form-label">Impuesto(IGV):</label>
-                            <input readonly type="text" name="impuesto" id="impuesto" class="form-control border-success">
+                            <label for="impuesto" class="form-label">Impuesto(IVA):</label>
+                            <input readonly type="text" name="impuesto" id="impuesto" class="form-control border-purple">
                             @error('impuesto')
                             <small class="text-danger">{{ '*'.$message }}</small>
                             @enderror
@@ -174,7 +174,7 @@
                         <!--Fecha--->
                         <div class="col-sm-6 mb-2">
                             <label for="fecha" class="form-label">Fecha:</label>
-                            <input readonly type="date" name="fecha" id="fecha" class="form-control border-success" value="<?php echo date("Y-m-d") ?>">
+                            <input readonly type="date" name="fecha" id="fecha" class="form-control border-purple" value="<?php echo date("Y-m-d") ?>">
                             <?php
 
                             use Carbon\Carbon;
@@ -242,7 +242,7 @@
     let total = 0;
 
     //Constantes
-    const impuesto = 18;
+    const impuesto = 16;
 
     function cancelarCompra() {
         //Elimar el tbody de la tabla

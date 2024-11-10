@@ -10,11 +10,11 @@
 
 @section('content')
 <div class="container-fluid px-4">
-    <h1 class="mt-4 text-center">Realizar Venta</h1>
+    <h1 class="text-purple mt-4 text-center">Venta Menu</h1>
     <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="{{ route('panel') }}">Inicio</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('ventas.index')}}">Ventas</a></li>
-        <li class="breadcrumb-item active">Realizar Venta</li>
+        <!--<li class="text-purple breadcrumb-item"><a href="{{ route('panel') }}">Inicio</a></li>-->
+        <!--<li class="breadcrumb-item"><a href="{{ route('ventas.index')}}">Ventas</a></li>-->
+        <li class="text-purple breadcrumb-item active">Menu</li>
     </ol>
 </div>
 
@@ -25,10 +25,10 @@
 
             <!------venta producto---->
             <div class="col-xl-8">
-                <div class="text-white bg-primary p-1 text-center">
+                <div class="text-white bg-primary-menu-purple p-1 text-center">
                     Detalles de la venta
                 </div>
-                <div class="p-3 border border-3 border-primary">
+                <div class="p-3 border border-3 border-purple">
                     <div class="row gy-4">
 
                         <!-----Producto---->
@@ -79,7 +79,7 @@
                         <div class="col-12">
                             <div class="table-responsive">
                                 <table id="tabla_detalle" class="table table-hover">
-                                    <thead class="bg-primary">
+                                    <thead class="bg-primary-menu-purple">
                                         <tr>
                                             <th class="text-white">#</th>
                                             <th class="text-white">Producto</th>
@@ -107,11 +107,11 @@
                                             <th colspan="4">Sumas</th>
                                             <th colspan="2"><span id="sumas">0</span></th>
                                         </tr>
-                                        <tr>
+                                        <!--<tr>
                                             <th></th>
                                             <th colspan="4">IVA %</th>
                                             <th colspan="2"><span id="igv">0</span></th>
-                                        </tr>
+                                        </tr>-->
                                         <tr>
                                             <th></th>
                                             <th colspan="4">Total</th>
@@ -127,10 +127,10 @@
 
             <!-----Venta---->
             <div class="col-xl-4">
-                <div class="text-white bg-success p-1 text-center">
+                <div class="text-white bg-primary-menu-purple p-1 text-center">
                     Datos generales
                 </div>
-                <div class="p-3 border border-3 border-success">
+                <div class="p-3 border border-3 border-purple">
                     <div class="row gy-4">
                         <!--Cliente-->
                         <div class="col-12">
@@ -168,18 +168,18 @@
                         </div>
 
                         <!--Impuesto---->
-                        <div class="col-sm-6">
+                        <!--<div class="col-sm-6">
                             <label for="impuesto" class="form-label">Impuesto(IGV):</label>
                             <input readonly type="text" name="impuesto" id="impuesto" class="form-control border-success">
                             @error('impuesto')
                             <small class="text-danger">{{ '*'.$message }}</small>
                             @enderror
-                        </div>
+                        </div>-->
 
                         <!--Fecha--->
                         <div class="col-sm-6">
                             <label for="fecha" class="form-label">Fecha:</label>
-                            <input readonly type="date" name="fecha" id="fecha" class="form-control border-success" value="<?php echo date("Y-m-d") ?>">
+                            <input readonly type="date" name="fecha" id="fecha" class="form-control border-purple text-center" value="<?php echo date("Y-m-d") ?>">
                             <?php
 
                             use Carbon\Carbon;
@@ -193,7 +193,7 @@
                         <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                     </div>
                     <!--Boton para cancelar venta--->                    
-                    <div class="text-center">
+                    <div class="text-center p-3">
                             <button type="submit" class="btn btn-success" id="guardar">Realizar venta</button>
                             <button id="cancelar" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 Cancelar venta

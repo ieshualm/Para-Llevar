@@ -1,3 +1,7 @@
+<?php
+$prod = 0;
+?>
+
 @extends('layouts.app')
 
 @section('title','Menus')
@@ -35,15 +39,23 @@
                 </div>
                 <div class="p-3 border border-3 border-primary">
                     <div class="row gy-4">
-                        <!-----Producto---->
+                        <!--Producto-->
+                        <!--
                         <div class="col-12">
-                            <select name="producto_id" id="producto_id" class="form-control selectpicker" data-live-search="true" data-size="1" title="Busque un producto aquí">
-                                @foreach ($productos as $item)
+                            <label for="producto_id" class="col-form-label">Producto:</label>
+                            <div class="col">
+                                <input disabled name="producto_id" id="producto_id" type="text" class="form-control" value="{{$productos[$prod]->nombre}}">                                
+                            </div>
+                        </div>-->
+                        
+                        <div class="col-12">
+                            <select name="producto_id" id="producto_id" class="form-control selectpicker" data-live-search="true" data-size="5" title="Busque un producto aquí">
+                                @foreach ($productos as $item)                                   
                                     <option value="{{$item->id}}-{{$item->stock}}-{{$item->precio_venta}}">{{$item->codigo.' '.$item->nombre}}</option>
                                 @endforeach
                             </select>
                         </div>
-
+                                
                         <!-----Stock--->
                         <div class="d-flex justify-content-end">
                             <div class="col-12 col-sm-6">

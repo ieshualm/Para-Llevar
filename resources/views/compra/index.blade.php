@@ -18,16 +18,16 @@
 @include('layouts.partials.alert')
 
 <div class="container-fluid px-4">
-    <h1 class="mt-4 text-center">Compras</h1>
+    <h1 class="mt-4 text-center text-purple">Inventario</h1>
     <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="{{ route('panel') }}">Inicio</a></li>
-        <li class="breadcrumb-item active">Compras</li>
+        <li class="breadcrumb-item text-purple"><a href="{{ route('panel') }}">Inicio</a></li>
+        <li class="breadcrumb-item active text-purple">Inventario</li>
     </ol>
 
     @can('crear-compra')
     <div class="mb-4">
         <a href="{{route('compras.create')}}">
-            <button type="button" class="btn btn-primary">Añadir nuevo registro</button>
+            <button type="button" class="btn btn-primary">Añadir nueva entrada</button>
         </a>
     </div>
     @endcan
@@ -56,7 +56,7 @@
                             <p class="text-muted mb-0">{{$item->numero_comprobante}}</p>
                         </td>
                         <td>
-                            <p class="fw-semibold mb-1">{{ ucfirst($item->proveedore->persona->tipo_persona) }}</p>
+                            <!--p class="fw-semibold mb-1">{{ ucfirst($item->proveedore->persona->tipo_persona) }}</p-->
                             <p class="text-muted mb-0">{{$item->proveedore->persona->razon_social}}</p>
                         </td>
                         <td>
@@ -73,7 +73,7 @@
 
                                 @can('mostrar-compra')
                                 <form action="{{route('compras.show', ['compra'=>$item]) }}" method="get">
-                                    <button type="submit" class="btn btn-success">
+                                    <button type="submit" class="btn btn-primary">
                                         Ver
                                     </button>
                                 </form>

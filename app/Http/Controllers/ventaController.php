@@ -7,6 +7,7 @@ use App\Models\Cliente;
 use App\Models\Comprobante;
 use App\Models\Producto;
 use App\Models\Venta;
+use App\Models\Menu;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;

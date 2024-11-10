@@ -4,14 +4,15 @@
             <div class="nav">
 
                 <div class="sb-sidenav-menu-heading">Inicio</div>
-                <a class="nav-link" href="{{ route('menus.index') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                <a class="nav-link" href="{{ route('ventas.create') }}">
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-pizza-slice"></i></div>
                     Menu
                 </a>
                 <a class="nav-link" href="{{ route('panel') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-folder-minus"></i></i></div>
                     Panel
                 </a>
+
 
                 <!---div class="sb-sidenav-menu-heading">Interface</div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
@@ -63,7 +64,7 @@
                 @can('ver-compra')
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseCompras" aria-expanded="false" aria-controls="collapseLayouts">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-store"></i></div>
-                    Compras
+                    Inventario
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
                 <div class="collapse" id="collapseCompras" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
@@ -72,7 +73,7 @@
                         <a class="nav-link" href="{{ route('compras.index') }}">Ver</a>
                         @endcan
                         @can('crear-compra')
-                        <a class="nav-link" href="{{ route('compras.create') }}">Crear</a>
+                        <a class="nav-link" href="{{ route('compras.create') }}">Nueva Entrada</a>
                         @endcan
                     </nav>
                 </div>
@@ -90,7 +91,7 @@
                         @can('ver-venta')
                         <a class="nav-link" href="{{ route('ventas.index') }}">Ver</a>
                         @endcan
-                        <!--@can('crear-compra')
+                        <!--@can('crear-venta')
                         <a class="nav-link" href="{{ route('ventas.create') }}">Crear</a>
                         @endcan-->
                     </nav>
@@ -113,14 +114,14 @@
 
                 @can('ver-marca')
                 <a class="nav-link" href="{{ route('marcas.index') }}">
-                    <div class="sb-nav-link-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-wine-bottle"></i></i></div>
                     Marcas
                 </a>
                 @endcan
 
                 @can('ver-producto')
                 <a class="nav-link" href="{{ route('productos.index') }}">
-                    <div class="sb-nav-link-icon"><i class="fa-brands fa-shopify"></i></div>
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-bowl-food"></i></i></div>
                     Platillos
                 </a>
                 @endcan

@@ -21,11 +21,11 @@
 
 @section('content')
 <div class="container-fluid px-4">
-    <h1 class="mt-4 text-center">Ver Venta</h1>
+    <h1 class="mt-4 text-center text-purple">Ver Venta</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="{{ route('panel') }}">Inicio</a></li>
         <li class="breadcrumb-item"><a href="{{ route('ventas.index')}}">Ventas</a></li>
-        <li class="breadcrumb-item active">Ver Venta</li>
+        <li class="breadcrumb-item active text-purple">Ver Venta</li>
     </ol>
 </div>
 
@@ -166,7 +166,7 @@
         </div>
         <div class="card-body table-responsive">
             <table class="table table-striped">
-                <thead class="bg-primary text-white">
+                <thead class="bg-primary-menu-purple text-white">
                     <tr class="align-top">
                         <th class="text-white">Producto</th>
                         <th class="text-white">Cantidad</th>
@@ -205,7 +205,7 @@
                         <th id="th-suma"></th>
                     </tr>
                     <tr>
-                        <th colspan="4">IGV:</th>
+                        <th colspan="4">IVA:</th>
                         <th id="th-igv"></th>
                     </tr>
                     <tr>

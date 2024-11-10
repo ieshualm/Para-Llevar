@@ -19,10 +19,10 @@
 @include('layouts.partials.alert')
 
 <div class="container-fluid px-4">
-    <h1 class="mt-4 text-center">Ventas</h1>
+    <h1 class="mt-4 text-center text-purple">Ventas</h1>
     <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="{{ route('panel') }}">Inicio</a></li>
-        <li class="breadcrumb-item active">Ventas</li>
+        <li class="breadcrumb-item text-purple"><a href="{{ route('panel') }}">Inicio</a></li>
+        <li class="breadcrumb-item active text-purple">Ventas</li>
     </ol>
 
     @can('crear-venta')
@@ -78,7 +78,7 @@
 
                                 @can('mostrar-venta')
                                 <form action="{{route('ventas.show', ['venta'=>$item]) }}" method="get">
-                                    <button type="submit" class="btn btn-success">
+                                    <button type="submit" class="btn btn-primary">
                                         Ver
                                     </button>
                                 </form>

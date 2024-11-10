@@ -15,10 +15,10 @@
 @include('layouts.partials.alert')
  
 <div class="container-fluid px-4">
-    <h1 class="mt-4 text-center">Categorías</h1>
+    <h1 class="mt-4 text-center text-purple">Categorías</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="{{ route('panel') }}">Inicio</a></li>
-        <li class="breadcrumb-item active">Categorías</li>
+        <li class="breadcrumb-item active text-purple">Categorías</li>
     </ol>
 
     @can('crear-categoria')
@@ -55,7 +55,7 @@
                         </td>
                         <td>
                             @if ($categoria->caracteristica->estado == 1)
-                            <span class="badge rounded-pill text-bg-success">activo</span>
+                            <span class="badge rounded-pill text-bg-purple">activo</span>
                             @else
                             <span class="badge rounded-pill text-bg-danger">eliminado</span>
                             @endif
@@ -115,7 +115,7 @@
                                     {{ $categoria->caracteristica->estado == 1 ? '¿Seguro que quieres eliminar la categoría?' : '¿Seguro que quieres restaurar la categoría?' }}
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Cerrar</button>
                                     <form action="{{ route('categorias.destroy',['categoria'=>$categoria->id]) }}" method="post">
                                         @method('DELETE')
                                         @csrf

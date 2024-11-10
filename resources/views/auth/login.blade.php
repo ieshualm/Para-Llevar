@@ -12,7 +12,7 @@
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="bg-primary">
+<body class="bg-primary-login">
     <div id="layoutAuthentication">
         <div id="layoutAuthentication_content">
             <main>
@@ -21,7 +21,7 @@
                         <div class="col-lg-5">
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
                                 <div class="card-header">
-                                    <h3 class="text-center font-weight-light my-4">Acceso al sistema</h3>
+                                    <h3 class="text-center font-weight-light my-4 text-purple">Para Llevar</h3>
                                 </div>
                                 <div class="card-body">
                                     @if ($errors->any())
@@ -35,7 +35,7 @@
                                     <form action="/login" method="post">
                                         @csrf
                                         <div class="form-floating mb-3">
-                                            <input autofocus autocomplete="off" value="invitado@gmail.com" class="form-control" name="email" id="inputEmail" type="email" placeholder="name@example.com" />
+                                            <input autofocus autocomplete="off" value="admin@gmail.com" class="form-control" name="email" id="inputEmail" type="email" placeholder="name@example.com" />
                                             <label for="inputEmail">Correo eléctronico</label>
                                         </div>
                                         <div class="form-floating mb-3">
@@ -65,11 +65,11 @@
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
                     <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Your Website 2022</div>
+                        <div class="text-muted">Copyright &copy; Para Llevar 2024</div>
                         <div>
-                            <a href="#">Privacy Policy</a>
+                            <a href="{{ asset('Privacidad') }}">Política de Privacidad</a>
                             &middot;
-                            <a href="#">Terms &amp; Conditions</a>
+                            <a href="{{ asset('Terminos') }}">Terminos &amp; Condiciones</a>
                         </div>
                     </div>
                 </div>

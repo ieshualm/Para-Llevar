@@ -12,11 +12,11 @@
 
 @section('content')
 <div class="container-fluid px-4">
-    <h1 class="mt-4 text-center">Crear Marca</h1>
+    <h1 class="mt-4 text-center text-purple">Crear Marca</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="{{ route('panel') }}">Inicio</a></li>
         <li class="breadcrumb-item"><a href="{{ route('marcas.index')}}">Marcas</a></li>
-        <li class="breadcrumb-item active">Crear Marca</li>
+        <li class="breadcrumb-item active text-purple">Crear Marca</li>
     </ol>
 
     <div class="card">

@@ -8,11 +8,11 @@
 
 @section('content')
 <div class="container-fluid px-4">
-    <h1 class="mt-4 text-center">Editar Rol</h1>
+    <h1 class="mt-4 text-center text-purple">Editar Rol</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="{{ route('panel') }}">Inicio</a></li>
         <li class="breadcrumb-item"><a href="{{ route('roles.index')}}">Roles</a></li>
-        <li class="breadcrumb-item active">Editar rol</li>
+        <li class="breadcrumb-item active text-purple">Editar rol</li>
     </ol>
 
     <div class="card">

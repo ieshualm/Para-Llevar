@@ -13,10 +13,10 @@
 @include('layouts.partials.alert')
 
 <div class="container-fluid px-4">
-    <h1 class="mt-4 text-center">Presentaciones</h1>
+    <h1 class="mt-4 text-center text-purple">Presentaciones</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="{{ route('panel') }}">Inicio</a></li>
-        <li class="breadcrumb-item active">Presentaciones</li>
+        <li class="breadcrumb-item active text-purple">Presentaciones</li>
     </ol>
 
     @can('crear-presentacione')
@@ -53,7 +53,7 @@
                         </td>
                         <td>
                             @if ($item->caracteristica->estado == 1)
-                            <span class="badge rounded-pill text-bg-success">activo</span>
+                            <span class="badge rounded-pill text-bg-purple">activo</span>
                             @else
                             <span class="badge rounded-pill text-bg-danger">eliminado</span>
                             @endif

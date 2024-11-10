@@ -21,14 +21,41 @@
 @endif
 
 <div class="container-fluid px-4">
-    <h1 class="mt-4">Panel</h1>
+    <h1 class="mt-4 text-purple">Panel</h1>
     <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item active">Panel</li>
+        <li class="breadcrumb-item active text-purple">Panel</li>
     </ol>
     <div class="row">
+
+        <!----Venta Menu--->
+        <div class="col-xl-3 col-md-6">
+            <div class="card bg-primary-menu-sauv text-purple mb-4">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-8">
+                            <i class="fa-solid fa-burger"></i></i><span class="m-1">Venta Menu</span>
+                        </div>
+                        <div class="col-4">
+                            <?php
+
+                            use App\Models\Venta;
+
+                            $ventas = count(Venta::all());
+                            ?>
+                            <p class="text-center fw-bold fs-4">{{$ventas}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                    <a class="small text-purple stretched-link" href="{{ route('ventas.create') }}">Ver más</a>
+                    <div class="small text-purple"><i class="fas fa-angle-right"></i></div>
+                </div>
+            </div>
+        </div>
+
         <!----Clientes--->
         <div class="col-xl-3 col-md-6">
-            <div class="card bg-primary text-white mb-4">
+            <div class="card bg-primary-menu-sauv text-purple mb-4">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-8">
@@ -46,15 +73,15 @@
                     </div>
                 </div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link" href="{{ route('clientes.index') }}">Ver más</a>
-                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    <a class="small text-purple stretched-link" href="{{ route('clientes.index') }}">Ver más</a>
+                    <div class="small text-purple"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>
         </div>
 
         <!----Categoria--->
         <div class="col-xl-3 col-md-6">
-            <div class="card bg-warning text-white mb-4">
+            <div class="card bg-primary-menu-sauv text-purple mb-4">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-8">
@@ -72,19 +99,19 @@
                     </div>
                 </div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link" href="{{ route('categorias.index') }}">Ver más</a>
-                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    <a class="small text-purple stretched-link" href="{{ route('categorias.index') }}">Ver más</a>
+                    <div class="small text-purple"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>
         </div>
 
         <!----Compra--->
         <div class="col-xl-3 col-md-6">
-            <div class="card bg-success text-white mb-4">
+            <div class="card bg-primary-menu-sauv text-purple mb-4">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-8">
-                            <i class="fa-solid fa-store"></i><span class="m-1">Compras</span>
+                            <i class="fa-solid fa-boxes-stacked"></i></i><span class="m-1">Inventario</span>
                         </div>
                         <div class="col-4">
                             <?php
@@ -98,41 +125,15 @@
                     </div>
                 </div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link" href="{{ route('compras.index') }}">Ver más</a>
-                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                </div>
-            </div>
-        </div>
-
-        <!----Marcas--->
-        <div class="col-xl-3 col-md-6">
-            <div class="card bg-danger text-white mb-4">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-8">
-                            <i class="fa-solid fa-bullhorn"></i><span class="m-1">Marcas</span>
-                        </div>
-                        <div class="col-4">
-                            <?php
-
-                            use App\Models\Marca;
-
-                            $marcas = count(Marca::all());
-                            ?>
-                            <p class="text-center fw-bold fs-4">{{$marcas}}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link" href="{{ route('marcas.index') }}">Ver más</a>
-                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    <a class="small text-purple stretched-link" href="{{ route('compras.index') }}">Ver más</a>
+                    <div class="small text-purple"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>
         </div>
 
         <!----Presentaciones--->
         <div class="col-xl-3 col-md-6">
-            <div class="card bg-danger text-white mb-4">
+            <div class="card bg-primary-menu-sauv text-purple mb-4">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-8">
@@ -150,19 +151,19 @@
                     </div>
                 </div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link" href="{{ route('presentaciones.index') }}">Ver más</a>
-                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    <a class="small text-purple stretched-link" href="{{ route('presentaciones.index') }}">Ver más</a>
+                    <div class="small text-purple"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>
         </div>
 
         <!----Producto--->
         <div class="col-xl-3 col-md-6">
-            <div class="card bg-success text-white mb-4">
+            <div class="card bg-primary-menu-sauv text-purple mb-4">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-8">
-                            <i class="fa-brands fa-shopify"></i><span class="m-1">Productos</span>
+                            <i class="fa-solid fa-bowl-rice"></i></i><span class="m-1">Platillos</span>
                         </div>
                         <div class="col-4">
                             <?php
@@ -176,15 +177,15 @@
                     </div>
                 </div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link" href="{{ route('productos.index') }}">Ver más</a>
-                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    <a class="small text-purple stretched-link" href="{{ route('productos.index') }}">Ver más</a>
+                    <div class="small text-purple"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>
         </div>
 
         <!----Proveedore--->
         <div class="col-xl-3 col-md-6">
-            <div class="card bg-warning text-white mb-4">
+            <div class="card bg-primary-menu-sauv text-purple mb-4">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-8">
@@ -202,15 +203,15 @@
                     </div>
                 </div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link" href="{{ route('proveedores.index') }}">Ver más</a>
-                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    <a class="small text-purple stretched-link" href="{{ route('proveedores.index') }}">Ver más</a>
+                    <div class="small text-purple"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>
         </div>
 
         <!----Users--->
         <div class="col-xl-3 col-md-6">
-            <div class="card bg-primary text-white mb-4">
+            <div class="card bg-primary-menu-sauv text-purple mb-4">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-8">
@@ -228,8 +229,8 @@
                     </div>
                 </div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link" href="{{ route('users.index') }}">Ver más</a>
-                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    <a class="small text-purple stretched-link" href="{{ route('users.index') }}">Ver más</a>
+                    <div class="small text-purple"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>
         </div>
