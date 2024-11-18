@@ -9,14 +9,8 @@
 @endpush
 
 @section('content')
-<div class="container-fluid px-4">
-    <h1 class="text-purple mt-4 text-center">Venta Menu</h1>
-    <ol class="breadcrumb mb-4">
-        <!--<li class="text-purple breadcrumb-item"><a href="{{ route('panel') }}">Inicio</a></li>-->
-        <!--<li class="breadcrumb-item"><a href="{{ route('ventas.index')}}">Ventas</a></li>-->
-        <li class="text-purple breadcrumb-item active">Menu</li>
-    </ol>
-</div>
+
+@include('layouts.partials.alert')
 
 <form action="{{ route('ventas.store') }}" method="post">
     @csrf
@@ -107,11 +101,11 @@
                                             <th colspan="4">Sumas</th>
                                             <th colspan="2"><span id="sumas">0</span></th>
                                         </tr>
-                                        <!--<tr>
+                                        <tr>
                                             <th></th>
                                             <th colspan="4">IVA %</th>
                                             <th colspan="2"><span id="igv">0</span></th>
-                                        </tr>-->
+                                        </tr>
                                         <tr>
                                             <th></th>
                                             <th colspan="4">Total</th>
@@ -120,9 +114,17 @@
                                     </tfoot>
                                 </table>
                             </div>
-                        </div>                    
-                    </div>                    
-                </div>            
+                        </div>
+
+                        <!--Boton para cancelar venta--->
+                        <div class="col-12">
+                            <button id="cancelar" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Cancelar venta
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
             </div>
 
             <!-----Venta---->
@@ -168,18 +170,18 @@
                         </div>
 
                         <!--Impuesto---->
-                        <!--<div class="col-sm-6">
-                            <label for="impuesto" class="form-label">Impuesto(IGV):</label>
-                            <input readonly type="text" name="impuesto" id="impuesto" class="form-control border-success">
+                        <div class="col-sm-6">
+                            <label for="impuesto" class="form-label">Impuesto(IVA):</label>
+                            <input readonly type="text" name="impuesto" id="impuesto" class="form-control border-purple">
                             @error('impuesto')
                             <small class="text-danger">{{ '*'.$message }}</small>
                             @enderror
-                        </div>-->
+                        </div>
 
                         <!--Fecha--->
                         <div class="col-sm-6">
                             <label for="fecha" class="form-label">Fecha:</label>
-                            <input readonly type="date" name="fecha" id="fecha" class="form-control border-purple text-center" value="<?php echo date("Y-m-d") ?>">
+                            <input readonly type="date" name="fecha" id="fecha" class="form-control border-purple" value="<?php echo date("Y-m-d") ?>">
                             <?php
 
                             use Carbon\Carbon;
@@ -191,39 +193,18 @@
 
                         <!----User--->
                         <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
-                    </div>
-                    <!--Boton para cancelar venta--->                    
-                    <div class="text-center p-3">
-                            <button type="submit" class="btn btn-success" id="guardar">Realizar venta</button>
-                            <button id="cancelar" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                Cancelar venta
-                            </button>                        
-                    </div>
-                </div>
-            </div>        
-        </div>
-    </div>
 
-    <!-- Modal para cancelar la venta -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Advertencia</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    ¿Seguro que quieres cancelar la venta?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button id="btnCancelarVenta" type="button" class="btn btn-danger" data-bs-dismiss="modal">Confirmar</button>
+                        <!--Botones--->
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-success" id="guardar">Realizar venta</button>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-</form>
 @endsection
 
 @push('js')
@@ -255,7 +236,7 @@
     let total = 0;
 
     //Constantes
-    const impuesto = 16;
+    const impuesto = 0;
 
     function mostrarValores() {
         let dataProducto = document.getElementById('producto_id').value.split('-');

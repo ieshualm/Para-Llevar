@@ -115,7 +115,7 @@ class ventaController extends Controller
             DB::rollBack();
         }
 
-        return redirect()->route('ventas.index')->with('success','Venta exitosa');
+        return redirect()->route('ventas.create')->with('success','Venta exitosa');
     }
 
     /**
