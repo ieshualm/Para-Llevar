@@ -51,7 +51,9 @@ class ProductoController extends Controller
             ->where('c.estado', 1)
             ->get();
 
-        return view('producto.create', compact('marcas', 'presentaciones', 'categorias'));
+        $productos = Producto::with(['categorias.caracteristica','marca.caracteristica','presentacione.caracteristica'])->latest()->get();
+
+        return view('producto.create', compact('marcas', 'presentaciones', 'categorias','productos'));
     }
 
     /**
@@ -91,7 +93,7 @@ class ProductoController extends Controller
         } catch (Exception $e) {
             DB::rollBack();
         }
-
+        
         return redirect()->route('productos.index')->with('success', 'Producto registrado');
     }
 

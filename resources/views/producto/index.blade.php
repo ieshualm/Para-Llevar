@@ -51,7 +51,7 @@
                     @foreach ($productos as $item)
                     <tr>
                         <td>
-                            {{$item->codigo}}
+                            {{$item->id}}
                         </td>
                         <td>
                             {{$item->nombre}}

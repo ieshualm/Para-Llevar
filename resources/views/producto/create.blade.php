@@ -31,7 +31,7 @@
                     <!----Codigo---->
                     <div class="col-md-6">
                         <label for="codigo" class="form-label">Código:</label>
-                        <input type="text" name="codigo" id="codigo" class="form-control" value="{{old('codigo')}}">
+                        <input readonly type="text" name="codigo" id="codigo" class="form-control" value="{{$productos[0]->id+1}}">
                         @error('codigo')
                         <small class="text-danger">{{'*'.$message}}</small>
                         @enderror
