@@ -62,13 +62,18 @@ class ventaController extends Controller
         })->get();
         $comprobantes = Comprobante::all();
 
-        return view('venta.create', compact('productos', 'clientes', 'comprobantes'));
+        $ventas = Venta::with(['comprobante','cliente.persona','user'])
+        ->where('estado',1)
+        ->latest()
+        ->get();
+
+        return view('venta.create', compact('productos', 'clientes', 'comprobantes','ventas'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreVentaRequest $request)
+    public function store(StoreVentaRequest $request, Venta $venta)
     {
         try{
             DB::beginTransaction();

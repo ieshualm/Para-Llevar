@@ -55,7 +55,7 @@
                     <tr>
                         <td>
                             <p class="fw-semibold mb-1">{{$item->comprobante->tipo_comprobante}}</p>
-                            <p class="text-muted mb-0">{{$item->numero_comprobante}}</p>
+                            <p class="text-muted mb-0">{{$item->id}}</p>
                         </td>
                         <td>
                             <!--<p class="fw-semibold mb-1">{{ ucfirst($item->cliente->persona->tipo_persona) }}</p>-->

@@ -160,14 +160,19 @@
                             @enderror
                         </div>
 
-                        <!--Numero de comprobante-->
                         <div class="col-12">
+                            <label for="numero_comprobante" class="form-label">Numero de comprobante:</label>
+                            <input readonly type="number" name="numero_comprobante" id="numero_comprobante" class="form-control border-purple" value="{{$ventas[0]->id+1}}">
+                        </div>
+
+                        <!--Numero de comprobante-->
+                        <!--div class="col-12">
                             <label for="numero_comprobante" class="form-label">Numero de comprobante:</label>
                             <input required type="text" name="numero_comprobante" id="numero_comprobante" class="form-control">
                             @error('numero_comprobante')
                             <small class="text-danger">{{ '*'.$message }}</small>
                             @enderror
-                        </div>
+                        </div-->
 
                         <!--Impuesto---->
                         <div class="col-sm-6">
@@ -224,7 +229,6 @@
         });
 
         disableButtons();
-
         $('#impuesto').val(impuesto + '%');
     });
 
@@ -234,6 +238,7 @@
     let sumas = 0;
     let igv = 0;
     let total = 0;
+    let contador = 0;
 
     //Constantes
     const impuesto = 0;
